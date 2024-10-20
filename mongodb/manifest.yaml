@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mpngodb
+  name: mongodb
   namespace: roboshop
   labels: # these labels are deployment labels
     app: mongodb
@@ -14,7 +14,7 @@ spec:
       app: mongodb
       project: roboshop
       tier: db
-    template:   ###related to pod
+  template:
     metadata:
       labels: # these labels are pod labels
         app: mongodb
@@ -23,10 +23,10 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: deepthi555/mongodb:v1
+        image: joindevops/mongodb:v1
         imagePullPolicy: Always
 ---
-apiVersion: v1    ####clusterip(service -if want to communicate or expose)
+apiVersion: v1
 kind: Service
 metadata:
   name: mongodb
