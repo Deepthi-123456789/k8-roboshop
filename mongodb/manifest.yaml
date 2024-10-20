@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: Deepthi/mongodb:v1
+        image: deepthi555/mongodb:v1
         imagePullPolicy: Always
 ---
 apiVersion: v1    ####clusterip(service -if want to communicate or expose)
